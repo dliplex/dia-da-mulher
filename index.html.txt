@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Patricia 💖</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<canvas id="space"></canvas>
+
+<div class="content">
+
+<h1>✨ Patricia ✨</h1>
+
+<p>
+
+Entre bilhões de estrelas no universo 🌌 <br><br>
+
+existe uma que sempre iluminou minha vida ⭐ <br><br>
+
+Obrigado por todo carinho,<br>
+pela força e pelo amor 💖<br><br>
+
+Feliz Dia da Mulher 🌷
+
+</p>
+
+<div class="assinatura">
+— Ramon
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
