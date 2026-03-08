@@ -4,42 +4,133 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Patricia 💖</title>
+<title>Para Patricia</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+body{
+margin:0;
+background:black;
+color:white;
+font-family:Arial;
+text-align:center;
+overflow:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+}
+
+.conteudo{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+max-width:600px;
+}
+
+h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+line-height:1.6;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<canvas id="space"></canvas>
+<canvas id="ceu"></canvas>
 
-<div class="content">
+<div class="conteudo">
 
-<h1>✨ Patricia ✨</h1>
+<h1>Patricia ✨</h1>
 
 <p>
 
-Entre bilhões de estrelas no universo 🌌 <br><br>
+Entre bilhões de estrelas no universo,<br><br>
 
-existe uma que sempre iluminou minha vida ⭐ <br><br>
+existe uma que sempre iluminou minha vida.<br><br>
 
-Obrigado por todo carinho,<br>
-pela força e pelo amor 💖<br><br>
+Uma estrela que me guiou,<br>
+que me protegeu<br>
+e que sempre esteve ali.<br><br>
 
-Feliz Dia da Mulher 🌷
+Essa estrela é você, mãe.<br><br>
+
+Feliz Dia da Mulher ❤️
 
 </p>
 
-<div class="assinatura">
+<p>
+
 — Ramon
-</div>
+
+</p>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+const canvas = document.getElementById("ceu");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let estrelas = [];
+
+for(let i=0;i<200;i++){
+
+estrelas.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.3
+
+})
+
+}
+
+function animar(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+estrelas.forEach(estrela=>{
+
+estrela.y += estrela.speed;
+
+if(estrela.y > canvas.height){
+
+estrela.y = 0;
+estrela.x = Math.random()*canvas.width;
+
+}
+
+ctx.beginPath();
+ctx.arc(estrela.x,estrela.y,estrela.size,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
+
+})
+
+requestAnimationFrame(animar)
+
+}
+
+animar()
+
+</script>
 
 </body>
+
 </html>
